@@ -37,7 +37,7 @@ namespace Projekt_Restauracja.Models
                 if (!context.Users.Any(u => u.Role == "Admin"))
                 {
                     var salt = PasswordHelper.GenerateSalt();
-                    var hash = PasswordHelper.HashPassword("admin123", salt); // password: admin123
+                    var hash = PasswordHelper.HashPassword("admin123", salt);
 
                     context.Users.Add(new User
                     {

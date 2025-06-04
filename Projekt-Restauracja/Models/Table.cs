@@ -17,7 +17,7 @@ namespace Projekt_Restauracja.Models
         public int Number { get; set; }
 
         [Required]
-        public int IsAvailable { get; set; } = 1; // 1 for available, 0 for not available
+        public int IsAvailable { get; set; } = 1;
 
         public ICollection<Reservation> Reservations { get; set; }
     }

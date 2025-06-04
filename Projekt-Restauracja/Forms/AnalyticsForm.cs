@@ -47,8 +47,6 @@ namespace Projekt_Restauracja.Forms
         {
             var fromDate = DateTime.Now.Date.AddDays(-30);
             var data = _analyticsService.GetTableOccupancyData(fromDate);
-
-            // Show only the last N points (e.g. 30 for daily, less for hour granularity)
             int N = 30;
             var filtered = data.Skip(Math.Max(0, data.Count - N)).ToList();
 
@@ -65,7 +63,7 @@ namespace Projekt_Restauracja.Forms
             var data = _analyticsService.GetPopularMenuItemsData(fromDate)
                 .OrderByDescending(x => x.Count)
                 .Take(10)
-                .ToList(); // Top 10
+                .ToList();
 
             SetupBarChart(
                 "Najpopularniejsze dania (Ostatnie 30 dni)", "Danie", "Liczba zamówień",
@@ -111,13 +109,12 @@ namespace Projekt_Restauracja.Forms
                 MarkerStyle = MarkerStyle.Circle,
                 MarkerSize = 7,
                 MarkerColor = System.Drawing.Color.White,
-                IsValueShownAsLabel = false // Hide all value labels!
+                IsValueShownAsLabel = false
             };
 
             for (int i = 0; i < xValues.Length; i++)
             {
                 int pointIdx = series.Points.AddXY(xValues[i], yValues[i]);
-                // Show value label every 5th point only, for readability
                 series.Points[pointIdx].IsValueShownAsLabel = (i % 5 == 0);
                 series.Points[pointIdx].LabelForeColor = System.Drawing.Color.White;
             }
@@ -160,7 +157,6 @@ namespace Projekt_Restauracja.Forms
             for (int i = 0; i < xValues.Length; i++)
             {
                 int pointIdx = series.Points.AddXY(xValues[i], yValues[i]);
-                // For bar charts: Only show value label if there are fewer than 15 bars, else show every 2nd label
                 series.Points[pointIdx].IsValueShownAsLabel = (xValues.Length <= 15) || (i % 2 == 0);
                 series.Points[pointIdx].LabelForeColor = System.Drawing.Color.White;
             }
