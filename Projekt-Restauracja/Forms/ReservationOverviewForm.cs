@@ -96,7 +96,7 @@ namespace Projekt_Restauracja
 
         private void btn_oplac_zamownienie_form2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }

@@ -3,7 +3,7 @@ using Projekt_Restauracja.Models;
 using System.Diagnostics;
 
 
-namespace Projekt_Restauracja.Forms
+namespace Projekt_Restauracja.Models
 {
 
     public static class AuditLogger

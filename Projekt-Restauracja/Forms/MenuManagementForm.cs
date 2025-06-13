@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Projekt_Restauracja.Models;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using Projekt_Restauracja.Models;
 
 namespace Projekt_Restauracja.Forms
 {
@@ -50,7 +51,14 @@ namespace Projekt_Restauracja.Forms
                         Category = form.ItemCategory
                     };
                     context.MenuItems.Add(menuItem);
-                    context.SaveChanges();
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        MessageBox.Show("Error saving changes: " + ex.Message);
+                    }
                     AuditLogger.Log("Zmieniono menu", $"Danie: {menuItem.Name}, Operacja: dodano");
                 }
                 LoadMenuItems();
