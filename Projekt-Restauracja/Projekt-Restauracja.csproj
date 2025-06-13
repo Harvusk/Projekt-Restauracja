@@ -17,6 +17,7 @@
     </PackageReference>
     <PackageReference Include="System.Data.OleDb" Version="9.0.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -21,9 +21,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formularz));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Naglowek = new Label();
             Opis_Restauracja = new Label();
             kolumna_lewa1 = new Label();
@@ -38,9 +39,6 @@
             kolumna_lewa5 = new Label();
             kolumna_prawa4 = new Label();
             menu_dan = new DataGridView();
-            dania = new DataGridViewTextBoxColumn();
-            cena = new DataGridViewTextBoxColumn();
-            ilosc = new DataGridViewTextBoxColumn();
             btnstolik1 = new Button();
             btnstolik2 = new Button();
             btnstolik3 = new Button();
@@ -53,6 +51,9 @@
             kolumna_prawa5 = new Label();
             godzina_rezerwacji = new ComboBox();
             btnStaffLogin = new Button();
+            dania = new DataGridViewTextBoxColumn();
+            cena = new DataGridViewTextBoxColumn();
+            ilosc = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)menu_dan).BeginInit();
             SuspendLayout();
             // 
@@ -62,9 +63,9 @@
             Naglowek.BackColor = Color.Transparent;
             Naglowek.Font = new Font("Palatino Linotype", 20.2F);
             Naglowek.ForeColor = Color.White;
-            Naglowek.Location = new Point(883, 41);
+            Naglowek.Location = new Point(919, 42);
             Naglowek.Name = "Naglowek";
-            Naglowek.Size = new Size(575, 36);
+            Naglowek.Size = new Size(737, 46);
             Naglowek.TabIndex = 1;
             Naglowek.Text = "★☆★ Witamy w „Margherita La Vrange” ★☆★";
             // 
@@ -77,9 +78,10 @@
             Opis_Restauracja.Location = new Point(687, 124);
             Opis_Restauracja.Name = "Opis_Restauracja";
             Opis_Restauracja.Padding = new Padding(15);
-            Opis_Restauracja.Size = new Size(900, 200);
+            Opis_Restauracja.Size = new Size(1100, 210);
             Opis_Restauracja.TabIndex = 2;
             Opis_Restauracja.Text = resources.GetString("Opis_Restauracja.Text");
+            Opis_Restauracja.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // kolumna_lewa1
             // 
@@ -100,7 +102,7 @@
             imienazwisko.Location = new Point(719, 528);
             imienazwisko.Name = "imienazwisko";
             imienazwisko.PlaceholderText = "1.Podaj - Imie i Nazwisko";
-            imienazwisko.Size = new Size(360, 26);
+            imienazwisko.Size = new Size(360, 30);
             imienazwisko.TabIndex = 4;
             // 
             // kolumna_lewa2
@@ -129,7 +131,7 @@
             numer_telefonu.Location = new Point(719, 587);
             numer_telefonu.Name = "numer_telefonu";
             numer_telefonu.PlaceholderText = "2.Podaj - Numer Telefonu";
-            numer_telefonu.Size = new Size(360, 26);
+            numer_telefonu.Size = new Size(360, 30);
             numer_telefonu.TabIndex = 7;
             // 
             // kolumna_prawa1
@@ -181,6 +183,7 @@
             kolumna_lewa5.BackColor = Color.Transparent;
             kolumna_lewa5.BorderStyle = BorderStyle.Fixed3D;
             kolumna_lewa5.Location = new Point(687, 849);
+            kolumna_lewa5.Margin = new Padding(25);
             kolumna_lewa5.Name = "kolumna_lewa5";
             kolumna_lewa5.Size = new Size(420, 337);
             kolumna_lewa5.TabIndex = 14;
@@ -194,8 +197,8 @@
             kolumna_prawa4.Name = "kolumna_prawa4";
             kolumna_prawa4.Size = new Size(680, 67);
             kolumna_prawa4.TabIndex = 15;
-            kolumna_prawa4.Text = "                                           ↼↼↼↫↬⇀⇀⇀";
-            kolumna_prawa4.TextAlign = ContentAlignment.MiddleLeft;
+            kolumna_prawa4.Text = "↼↼↼↫↬⇀⇀⇀";
+            kolumna_prawa4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // menu_dan
             // 
@@ -215,14 +218,14 @@
             menu_dan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             menu_dan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             menu_dan.Columns.AddRange(new DataGridViewColumn[] { dania, cena, ilosc });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.Black;
-            dataGridViewCellStyle4.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            menu_dan.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Black;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            menu_dan.DefaultCellStyle = dataGridViewCellStyle5;
             menu_dan.EnableHeadersVisualStyles = false;
             menu_dan.Location = new Point(1138, 504);
             menu_dan.MultiSelect = false;
@@ -234,38 +237,6 @@
             menu_dan.CellBeginEdit += menu_dan_CellBeginEdit;
             menu_dan.CellClick += menu_dan_grid_CellClick;
             menu_dan.CellValueChanged += menu_dan_CellValueChanged;
-            // 
-            // dania
-            // 
-            dataGridViewCellStyle2.SelectionBackColor = Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dania.DefaultCellStyle = dataGridViewCellStyle2;
-            dania.HeaderText = "Nazwa Dania";
-            dania.MinimumWidth = 6;
-            dania.Name = "dania";
-            dania.ReadOnly = true;
-            dania.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dania.Width = 330;
-            // 
-            // cena
-            // 
-            dataGridViewCellStyle3.SelectionBackColor = Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            cena.DefaultCellStyle = dataGridViewCellStyle3;
-            cena.HeaderText = "Cena (zł)";
-            cena.MinimumWidth = 6;
-            cena.Name = "cena";
-            cena.ReadOnly = true;
-            cena.SortMode = DataGridViewColumnSortMode.NotSortable;
-            cena.Width = 110;
-            // 
-            // ilosc
-            // 
-            ilosc.HeaderText = "Ilość (Wpisać) ";
-            ilosc.MinimumWidth = 6;
-            ilosc.Name = "ilosc";
-            ilosc.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ilosc.Width = 150;
             // 
             // btnstolik1
             // 
@@ -350,7 +321,7 @@
             btnrezerwacja.BackColor = Color.Snow;
             btnrezerwacja.Font = new Font("Palatino Linotype", 11.2F);
             btnrezerwacja.ForeColor = Color.Black;
-            btnrezerwacja.Location = new Point(1564, 1067);
+            btnrezerwacja.Location = new Point(1589, 1067);
             btnrezerwacja.Name = "btnrezerwacja";
             btnrezerwacja.Size = new Size(165, 36);
             btnrezerwacja.TabIndex = 26;
@@ -364,7 +335,7 @@
             data_rezerwacji.MaxDate = new DateTime(2025, 7, 31, 0, 0, 0, 0);
             data_rezerwacji.MinDate = new DateTime(2025, 5, 30, 0, 0, 0, 0);
             data_rezerwacji.Name = "data_rezerwacji";
-            data_rezerwacji.Size = new Size(360, 26);
+            data_rezerwacji.Size = new Size(360, 30);
             data_rezerwacji.TabIndex = 28;
             data_rezerwacji.Value = new DateTime(2025, 5, 30, 0, 0, 0, 0);
             // 
@@ -373,6 +344,7 @@
             kolumna_prawa5.BackColor = Color.Transparent;
             kolumna_prawa5.BorderStyle = BorderStyle.Fixed3D;
             kolumna_prawa5.Location = new Point(1107, 1116);
+            kolumna_prawa5.Margin = new Padding(25);
             kolumna_prawa5.Name = "kolumna_prawa5";
             kolumna_prawa5.Padding = new Padding(10);
             kolumna_prawa5.Size = new Size(680, 70);
@@ -384,7 +356,7 @@
             // 
             godzina_rezerwacji.Location = new Point(719, 703);
             godzina_rezerwacji.Name = "godzina_rezerwacji";
-            godzina_rezerwacji.Size = new Size(360, 27);
+            godzina_rezerwacji.Size = new Size(360, 31);
             godzina_rezerwacji.TabIndex = 0;
             // 
             // btnStaffLogin
@@ -399,16 +371,54 @@
             btnStaffLogin.Text = "Zaloguj jako personel";
             btnStaffLogin.UseVisualStyleBackColor = false;
             // 
+            // dania
+            // 
+            dania.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dania.DefaultCellStyle = dataGridViewCellStyle2;
+            dania.HeaderText = "Nazwa Dania";
+            dania.MinimumWidth = 6;
+            dania.Name = "dania";
+            dania.ReadOnly = true;
+            dania.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cena
+            // 
+            cena.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            cena.DefaultCellStyle = dataGridViewCellStyle3;
+            cena.HeaderText = "Cena (zł)";
+            cena.MinimumWidth = 80;
+            cena.Name = "cena";
+            cena.ReadOnly = true;
+            cena.SortMode = DataGridViewColumnSortMode.NotSortable;
+            cena.Width = 84;
+            // 
+            // ilosc
+            // 
+            ilosc.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            ilosc.DefaultCellStyle = dataGridViewCellStyle4;
+            ilosc.HeaderText = "Ilość (Wpisać) ";
+            ilosc.MinimumWidth = 110;
+            ilosc.Name = "ilosc";
+            ilosc.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ilosc.Width = 127;
+            // 
             // Formularz
             // 
             AccessibleRole = AccessibleRole.Dialog;
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
+            AutoSize = true;
             BackColor = Color.DarkGray;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1646, 1006);
+            ClientSize = new Size(1902, 1033);
             Controls.Add(godzina_rezerwacji);
             Controls.Add(kolumna_prawa5);
             Controls.Add(data_rezerwacji);
@@ -438,8 +448,9 @@
             DoubleBuffered = true;
             Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
             ForeColor = SystemColors.ButtonHighlight;
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
             Name = "Formularz";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formularz Rezerwacji Stolika";
@@ -475,9 +486,9 @@
         private System.Windows.Forms.DateTimePicker data_rezerwacji;
         private System.Windows.Forms.Label kolumna_prawa5;
         private System.Windows.Forms.ComboBox godzina_rezerwacji;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dania;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ilosc;
         private System.Windows.Forms.Button btnStaffLogin;
+        private DataGridViewTextBoxColumn dania;
+        private DataGridViewTextBoxColumn cena;
+        private DataGridViewTextBoxColumn ilosc;
     }
 }
