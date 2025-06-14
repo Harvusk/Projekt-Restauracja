@@ -33,8 +33,8 @@ namespace Projekt_Restauracja
                 }
             }
 
-            var font1 = new System.Drawing.Font("Palatino Linotype", 22F, System.Drawing.FontStyle.Bold);
-            var font2 = new System.Drawing.Font("Palatino Linotype", 22F, System.Drawing.FontStyle.Bold);
+            var font1 = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold);
+            var font2 = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold);
 
             string daneOsobowe = $"{reservation.Name}\nTel: {reservation.Phone}\n{reservation.Date:dd.MM.yyyy} {reservation.Time}";
             tabela_wyswietlanie_rezerwacji.Controls.Add(new Label()
@@ -96,7 +96,17 @@ namespace Projekt_Restauracja
 
         private void btn_oplac_zamownienie_form2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void daneosobowe_wyswietlenie_naglowek_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabela_wyswietlanie_rezerwacji_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

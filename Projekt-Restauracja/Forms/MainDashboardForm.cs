@@ -36,7 +36,7 @@ namespace Projekt_Restauracja
 
         private void Formularz_Load(object sender, EventArgs e)
         {
-            RestaurantContext.EnsureAdminUser();
+            RestaurantContext.InitializeDatabase();
             godzina_rezerwacji.Items.Clear();
             godzina_rezerwacji.Items.AddRange(new object[] {
                 "Wybierz godzinę      ->", "12:00", "12:45", "13:30", "14:15", "15:00",
@@ -55,6 +55,7 @@ namespace Projekt_Restauracja
                             new MenuItem { Name = "Margherita", Price = 45, Category = "PIZZE" },
                             new MenuItem { Name = "Pepperoni", Price = 50, Category = "PIZZE" },
                             new MenuItem { Name = "Al pesto", Price = 55, Category = "PIZZE" },
+                            new MenuItem { Name = "Neapolitańska", Price = 50, Category = "PIZZE" },
                             new MenuItem { Name = "Neapolitańska", Price = 50, Category = "PIZZE" },
 
                             // DANIA GŁÓWNE
@@ -253,12 +254,8 @@ namespace Projekt_Restauracja
         private void menu_dan_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             var cellValue = menu_dan.Rows[e.RowIndex].Cells[0].Value?.ToString();
-            if (menu_dan.Rows[e.RowIndex].Cells[0].Value.ToString().StartsWith("🍽️"))
-            {
-                e.Cancel = true;
-            }
             if (cellValue != null &&
-                (cellValue.StartsWith("🍽️") || cellValue.StartsWith("🍕") || cellValue.StartsWith("🍝") || cellValue.StartsWith("🥣") || cellValue.StartsWith("🍰") || cellValue.StartsWith("🥤")) &&
+                (cellValue.StartsWith("🍕") || cellValue.StartsWith("🍝") || cellValue.StartsWith("🥣") || cellValue.StartsWith("🍰") || cellValue.StartsWith("🥤")) &&
                 e.ColumnIndex == 2)
             {
                 e.Cancel = true;
@@ -330,8 +327,6 @@ namespace Projekt_Restauracja
                 {
                     MessageBox.Show("Ten stolik jest już zarezerwowany na wybraną godzinę. Proszę wybrać inny stolik.");
                     ShowAvailableTables();
-                    return;
-                  
                 }
 
                 var customer = context.Customers
@@ -375,7 +370,6 @@ namespace Projekt_Restauracja
                         MessageBox.Show($"Danie '{item.Name}' nie istnieje w menu! Zamówienia mogą być składane tylko na dania z menu.");
                         return;
                     }
-
                     var orderItem = new Projekt_Restauracja.Models.OrderItem
                     {
                         MenuItemId = menuItem.MenuItemId,

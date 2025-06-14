@@ -30,10 +30,13 @@ namespace Projekt_Restauracja.Models
             base.OnModelCreating(modelBuilder);
         }
 
-        public static void EnsureAdminUser()
+        public static void InitializeDatabase()
         {
             using (var context = new RestaurantContext())
             {
+
+                context.Database.Migrate();
+
                 if (!context.Users.Any(u => u.Role == "Admin"))
                 {
                     var salt = PasswordHelper.GenerateSalt();
