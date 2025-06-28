@@ -37,7 +37,7 @@
             Naglowek_form2.ForeColor = Color.White;
             Naglowek_form2.Location = new Point(921, 84);
             Naglowek_form2.Name = "Naglowek_form2";
-            Naglowek_form2.Size = new Size(611, 55);
+            Naglowek_form2.Size = new Size(486, 45);
             Naglowek_form2.TabIndex = 2;
             Naglowek_form2.Text = "★☆★ Złożone Rezerwacje ★☆★";
             // 
@@ -172,7 +172,7 @@
             // Formularz2
             // 
             AccessibleRole = AccessibleRole.Dialog;
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");

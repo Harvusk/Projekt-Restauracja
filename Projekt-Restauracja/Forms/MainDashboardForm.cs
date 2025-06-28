@@ -41,6 +41,7 @@ namespace Projekt_Restauracja
             godzina_rezerwacji.Items.AddRange(new object[] {
                 "Wybierz godzinę      ->", "12:00", "12:45", "13:30", "14:15", "15:00",
                 "15:45", "16:30", "17:15", "18:00", "18:45", "19:30", "20:15", "21:00" });
+            this.BeginInvoke(new Action(() => this.ActiveControl = null));
 
             if (godzina_rezerwacji.Items.Count > 0)
                 godzina_rezerwacji.SelectedIndex = 0;

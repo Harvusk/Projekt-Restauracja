@@ -19,6 +19,7 @@ namespace Projekt_Restauracja.Models
         public DbSet<User> Users { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "restaurant.db");

@@ -21,5 +21,6 @@ namespace Projekt_Restauracja.Models
         public string PhoneNumber { get; set; }
 
         public ICollection<Reservation> Reservations { get; set; }
+
     }
 }

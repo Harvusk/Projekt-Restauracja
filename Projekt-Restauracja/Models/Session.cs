@@ -10,6 +10,8 @@ namespace Projekt_Restauracja.Models
     public static class Session
     {
         public static User CurrentUser { get; set; } = null;
+
+
         public static void Clear()
         {
             CurrentUser = null;

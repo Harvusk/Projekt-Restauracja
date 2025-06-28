@@ -8,6 +8,7 @@ namespace Projekt_Restauracja.Models
 
     public static class AuditLogger
     {
+
         public static void Log(string action, string details)
         {
             try

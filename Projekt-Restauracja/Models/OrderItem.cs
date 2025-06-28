@@ -20,5 +20,6 @@ namespace Projekt_Restauracja.Models
         [Range(1, int.MaxValue, ErrorMessage = "Quantity must be at least 1.")]
         public int Quantity { get; set; } 
         public decimal UnitPrice { get; set; }
+
     }
 }

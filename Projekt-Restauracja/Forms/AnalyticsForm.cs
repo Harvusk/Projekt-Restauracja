@@ -77,13 +77,14 @@ namespace Projekt_Restauracja.Forms
             var fromDate = DateTime.Now.Date.AddDays(-30);
             var data = _analyticsService.GetRevenueData(fromDate);
 
-            int N = 20; // Show fewer days for clarity
+            int N = 20;
             var filtered = data.Skip(Math.Max(0, data.Count - N)).ToList();
 
             SetupBarChart(
                 "Utarg (Ostatnie 30 dni)", "Data", "Utarg",
                 filtered.Select(x => x.Date.ToShortDateString()).ToArray(),
                 filtered.Select(x => (double)x.TotalRevenue).ToArray()
+
             );
         }
 
@@ -94,10 +95,13 @@ namespace Projekt_Restauracja.Forms
             chartAnalytics.Series.Clear();
             chartAnalytics.Titles.Clear();
             chartAnalytics.Titles.Add(title);
+            chartAnalytics.Titles[0].ForeColor = System.Drawing.Color.White;
 
             var area = chartAnalytics.ChartAreas[0];
             area.AxisX.Title = xAxisTitle;
+            area.AxisX.TitleForeColor = System.Drawing.Color.White;
             area.AxisY.Title = yAxisTitle;
+            area.AxisY.TitleForeColor = System.Drawing.Color.White;
 
             // Line chart, Italian green
             var series = new Series
@@ -122,7 +126,7 @@ namespace Projekt_Restauracja.Forms
 
             chartAnalytics.Series.Add(series);
 
-            // X axis: label every 3rd only, tilt for readability
+            // X axis
             var xAxis = area.AxisX;
             xAxis.LabelStyle.Angle = -30;
             xAxis.LabelStyle.Interval = 3;
@@ -140,10 +144,13 @@ namespace Projekt_Restauracja.Forms
             chartAnalytics.Series.Clear();
             chartAnalytics.Titles.Clear();
             chartAnalytics.Titles.Add(title);
+            chartAnalytics.Titles[0].ForeColor = System.Drawing.Color.White;
 
             var area = chartAnalytics.ChartAreas[0];
             area.AxisX.Title = xAxisTitle;
+            area.AxisX.TitleForeColor = System.Drawing.Color.White;
             area.AxisY.Title = yAxisTitle;
+            area.AxisY.TitleForeColor = System.Drawing.Color.White;
 
             var series = new Series
             {
@@ -164,7 +171,7 @@ namespace Projekt_Restauracja.Forms
 
             chartAnalytics.Series.Add(series);
 
-            // X axis: always tilt for long labels, show every label for few items, else every 2nd
+            // X axis
             var xAxis = area.AxisX;
             xAxis.LabelStyle.Angle = -15;
             xAxis.LabelStyle.Interval = (xValues.Length > 15) ? 2 : 1;

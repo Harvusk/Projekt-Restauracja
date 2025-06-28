@@ -20,5 +20,6 @@ namespace Projekt_Restauracja.Models
         public int IsAvailable { get; set; } = 1;
 
         public ICollection<Reservation> Reservations { get; set; }
+
     }
 }
